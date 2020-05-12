@@ -1,0 +1,25 @@
+## Travis config file to build a package
+
+language: r
+
+cache: packages
+
+r:
+  - release
+  - devel
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install libfftw3-dev libgsl-dev gdal-bin libgdal-dev
+  
+script:
+  # Test first the fitting results against pli code
+  - R -e "update.packages(ask = FALSE)"
+  - R -e "install.packages(c('testthat', 'roxygen2', 'devtools'))"
+  - R -e "devtools::install_deps()"
+  # Then test the whole package
+  - R CMD build .
+  - R CMD check *tar.gz --as-cran 
+  
+after_failure:
+  find *Rcheck -name '*.fail' -print -exec cat '{}' \;
