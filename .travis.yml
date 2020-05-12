@@ -13,7 +13,6 @@ before_install:
   - sudo apt-get install libfftw3-dev libgsl-dev gdal-bin libgdal-dev
   
 script:
-  # Test first the fitting results against pli code
   - R -e "update.packages(ask = FALSE)"
   - R -e "install.packages(c('testthat', 'roxygen2', 'devtools'))"
   - R -e "devtools::install_deps()"
