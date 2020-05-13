@@ -1,7 +1,7 @@
 Package: spatialwarningsGis
 Type: Package
 Title: Spatial Early Warning Signals of Ecosystem Degradation - GIS extensions
-Version: 1.9.99
+Version: 2.0.0
 Author: Alexandre Genin
 License: MIT + file LICENSE
 Maintainer: Alexandre Genin <alexandre.genin@umontpellier.fr>

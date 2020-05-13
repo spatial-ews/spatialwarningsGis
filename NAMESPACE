@@ -3,5 +3,4 @@
 S3method(convert_to_matrix,RasterBrick)
 S3method(convert_to_matrix,RasterLayer)
 S3method(convert_to_matrix,RasterStack)
-S3method(display_matrix,RasterLayer)
 importFrom(spatialwarnings,convert_to_matrix)
