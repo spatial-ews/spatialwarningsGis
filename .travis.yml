@@ -15,6 +15,7 @@ before_install:
 script:
   - R -e "update.packages(ask = FALSE)"
   - R -e "install.packages(c('testthat', 'roxygen2', 'devtools'))"
+  - R -e "devtools::install_github('spatial-ews/spatialwarnings', dependencies = TRUE)"
   - R -e "devtools::install_deps()"
   # Then test the whole package
   - R CMD build .

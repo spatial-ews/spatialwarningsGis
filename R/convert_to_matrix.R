@@ -12,18 +12,18 @@
 # }
 
 #'@export
-convert_to_matrix.RasterLayer <- function(object) { 
+convert_to_matrix.RasterLayer <- function(object, ...) { 
   return( raster::as.matrix(object) )
 }
 
 #'@export
-convert_to_matrix.RasterBrick <- function(object) { 
+convert_to_matrix.RasterBrick <- function(object, ...) { 
   stop("spatialwarnings cannot use RasterBrick/RasterStack objects. You ", 
         "must extract single RasterLayers from these objects first")
 }
 
 #'@export
-convert_to_matrix.RasterStack <- function(object) { 
+convert_to_matrix.RasterStack <- function(object, ...) { 
   stop("spatialwarnings cannot use RasterBrick/RasterStack objects. You ", 
         "must extract single RasterLayers from these objects first")
 }
