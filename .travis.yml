@@ -16,7 +16,8 @@ script:
   - R -e "update.packages(ask = FALSE)"
   - R -e "install.packages(c('testthat', 'roxygen2', 'devtools'))"
   - R -e "devtools::install_github('spatial-ews/spatialwarnings', dependencies = TRUE)"
-  - R -e "devtools::install_deps()"
+  - R -e "devtools::install_deps(dependencies = TRUE, repos = 'https://cloud.r-project.org')"
+  
   # Then test the whole package
   - R CMD build .
   - R CMD check *tar.gz --as-cran 
